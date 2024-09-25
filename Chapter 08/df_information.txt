@@ -1,0 +1,11 @@
+<class 'pandas.core.frame.DataFrame'>
+Index: 35 entries, 1 to 35
+Data columns (total 4 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   name    35 non-null     object
+ 1   class   35 non-null     object
+ 2   mark    35 non-null     int64 
+ 3   gender  35 non-null     object
+dtypes: int64(1), object(3)
+memory usage: 1.4+ KB

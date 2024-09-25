@@ -1,0 +1,17 @@
+import numpy as mynp
+import scipy.sparse as myscpy
+# print(help(myscpy.csr_matrix))
+myarray = mynp.array([0,0,1,0,0,2,0,3,0])
+print(myscpy.csr_matrix(myarray))
+print('-'*50)
+myarray2 = mynp.array([[0,0,1],[0,0,2],[0,3,0]])
+print('Viewing non-zero items using data property')
+print(myscpy.csr_matrix(myarray2).data)
+print('-'*50)
+print('Counting non-zero items using count_nonzero method')
+print(myscpy.csr_matrix(myarray2).count_nonzero())
+print('-'*50)
+print('Eliminating zero items using eliminate_zeros method')
+myvar = myscpy.csr_matrix(myarray2)
+myvar.eliminate_zeros()
+print(myvar)

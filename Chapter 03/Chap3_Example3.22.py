@@ -1,0 +1,10 @@
+import numpy as mynp
+# print(help(mynp.dot))
+myarr1 = mynp.arange(1,5).reshape(2,2)
+myarr2 = mynp.arange(11,15).reshape(2,2)
+print(myarr1)
+print(myarr2)
+print("using numpy function")
+print(mynp.dot(myarr1,myarr2))
+print("Using ndarray object")
+print(myarr1.dot(myarr2))
