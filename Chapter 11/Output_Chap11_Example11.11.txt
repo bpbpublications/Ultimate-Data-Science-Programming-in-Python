@@ -1,0 +1,223 @@
+Case1: Displaying first 3 rows using pandas
+   sepal.length  sepal.width  petal.length  petal.width variety
+0           5.1          3.5           1.4          0.2  Setosa
+1           4.9          3.0           1.4          0.2  Setosa
+2           4.7          3.2           1.3          0.2  Setosa
+Case1: Displaying first 3 rows using polars
+shape: (3, 5)
+┌──────────────┬─────────────┬──────────────┬─────────────┬─────────┐
+│ sepal.length ┆ sepal.width ┆ petal.length ┆ petal.width ┆ variety │
+│ ---          ┆ ---         ┆ ---          ┆ ---         ┆ ---     │
+│ f64          ┆ f64         ┆ f64          ┆ f64         ┆ str     │
+╞══════════════╪═════════════╪══════════════╪═════════════╪═════════╡
+│ 5.1          ┆ 3.5         ┆ 1.4          ┆ 0.2         ┆ Setosa  │
+│ 4.9          ┆ 3.0         ┆ 1.4          ┆ 0.2         ┆ Setosa  │
+│ 4.7          ┆ 3.2         ┆ 1.3          ┆ 0.2         ┆ Setosa  │
+└──────────────┴─────────────┴──────────────┴─────────────┴─────────┘
+--------------------------------------------------
+Case2: Displaying Dimensions using pandas
+(150, 5)
+Case2: Displaying Dimensions using polars
+(150, 5)
+--------------------------------------------------
+Case3: Displaying datatype using pandas
+sepal.length    float64
+sepal.width     float64
+petal.length    float64
+petal.width     float64
+variety          object
+dtype: object
+Case3: Displaying datatype using polars
+[Float64, Float64, Float64, Float64, Utf8]
+--------------------------------------------------
+Case4: Columns selection using pandas
+     sepal.length  petal.length
+0             5.1           1.4
+1             4.9           1.4
+2             4.7           1.3
+3             4.6           1.5
+4             5.0           1.4
+..            ...           ...
+145           6.7           5.2
+146           6.3           5.0
+147           6.5           5.2
+148           6.2           5.4
+149           5.9           5.1
+
+[150 rows x 2 columns]
+Case4: Columns selection using polars
+shape: (150, 2)
+┌──────────────┬──────────────┐
+│ sepal.length ┆ petal.length │
+│ ---          ┆ ---          │
+│ f64          ┆ f64          │
+╞══════════════╪══════════════╡
+│ 5.1          ┆ 1.4          │
+│ 4.9          ┆ 1.4          │
+│ 4.7          ┆ 1.3          │
+│ 4.6          ┆ 1.5          │
+│ …            ┆ …            │
+│ 6.3          ┆ 5.0          │
+│ 6.5          ┆ 5.2          │
+│ 6.2          ┆ 5.4          │
+│ 5.9          ┆ 5.1          │
+└──────────────┴──────────────┘
+--------------------------------------------------
+Case5: Filtering Data using pandas
+    sepal.length  sepal.width  petal.length  petal.width     variety
+50           7.0          3.2           4.7          1.4  Versicolor
+51           6.4          3.2           4.5          1.5  Versicolor
+52           6.9          3.1           4.9          1.5  Versicolor
+53           5.5          2.3           4.0          1.3  Versicolor
+54           6.5          2.8           4.6          1.5  Versicolor
+Case5: Filtering Data using polars
+shape: (5, 5)
+┌──────────────┬─────────────┬──────────────┬─────────────┬────────────┐
+│ sepal.length ┆ sepal.width ┆ petal.length ┆ petal.width ┆ variety    │
+│ ---          ┆ ---         ┆ ---          ┆ ---         ┆ ---        │
+│ f64          ┆ f64         ┆ f64          ┆ f64         ┆ str        │
+╞══════════════╪═════════════╪══════════════╪═════════════╪════════════╡
+│ 7.0          ┆ 3.2         ┆ 4.7          ┆ 1.4         ┆ Versicolor │
+│ 6.4          ┆ 3.2         ┆ 4.5          ┆ 1.5         ┆ Versicolor │
+│ 6.9          ┆ 3.1         ┆ 4.9          ┆ 1.5         ┆ Versicolor │
+│ 5.5          ┆ 2.3         ┆ 4.0          ┆ 1.3         ┆ Versicolor │
+│ 6.5          ┆ 2.8         ┆ 4.6          ┆ 1.5         ┆ Versicolor │
+└──────────────┴─────────────┴──────────────┴─────────────┴────────────┘
+--------------------------------------------------
+Case6: Sorting using pandas
+     sepal.length  sepal.width  petal.length  petal.width    variety
+149           5.9          3.0           5.1          1.8  Virginica
+111           6.4          2.7           5.3          1.9  Virginica
+122           7.7          2.8           6.7          2.0  Virginica
+121           5.6          2.8           4.9          2.0  Virginica
+120           6.9          3.2           5.7          2.3  Virginica
+..            ...          ...           ...          ...        ...
+31            5.4          3.4           1.5          0.4     Setosa
+30            4.8          3.1           1.6          0.2     Setosa
+29            4.7          3.2           1.6          0.2     Setosa
+28            5.2          3.4           1.4          0.2     Setosa
+0             5.1          3.5           1.4          0.2     Setosa
+
+[150 rows x 5 columns]
+Case6: Sorting using polars
+shape: (150, 5)
+┌──────────────┬─────────────┬──────────────┬─────────────┬───────────┐
+│ sepal.length ┆ sepal.width ┆ petal.length ┆ petal.width ┆ variety   │
+│ ---          ┆ ---         ┆ ---          ┆ ---         ┆ ---       │
+│ f64          ┆ f64         ┆ f64          ┆ f64         ┆ str       │
+╞══════════════╪═════════════╪══════════════╪═════════════╪═══════════╡
+│ 6.3          ┆ 3.3         ┆ 6.0          ┆ 2.5         ┆ Virginica │
+│ 5.8          ┆ 2.7         ┆ 5.1          ┆ 1.9         ┆ Virginica │
+│ 7.1          ┆ 3.0         ┆ 5.9          ┆ 2.1         ┆ Virginica │
+│ 6.3          ┆ 2.9         ┆ 5.6          ┆ 1.8         ┆ Virginica │
+│ …            ┆ …           ┆ …            ┆ …           ┆ …         │
+│ 5.1          ┆ 3.8         ┆ 1.6          ┆ 0.2         ┆ Setosa    │
+│ 4.6          ┆ 3.2         ┆ 1.4          ┆ 0.2         ┆ Setosa    │
+│ 5.3          ┆ 3.7         ┆ 1.5          ┆ 0.2         ┆ Setosa    │
+│ 5.0          ┆ 3.3         ┆ 1.4          ┆ 0.2         ┆ Setosa    │
+└──────────────┴─────────────┴──────────────┴─────────────┴───────────┘
+--------------------------------------------------
+Case7: Join using pandas
+   staffno  salary_x  salary_y
+0       12    100000    110000
+1       13    200000    220000
+Case7: Join using polars
+shape: (2, 3)
+┌─────────┬────────┬──────────────┐
+│ staffno ┆ salary ┆ salary_right │
+│ ---     ┆ ---    ┆ ---          │
+│ i64     ┆ i64    ┆ i64          │
+╞═════════╪════════╪══════════════╡
+│ 12      ┆ 100000 ┆ 110000       │
+│ 13      ┆ 200000 ┆ 220000       │
+└─────────┴────────┴──────────────┘
+--------------------------------------------------
+Case8: Concatenate using pandas
+   staffno  salary
+0       12  100000
+1       13  200000
+2       14  300000
+3       15  400000
+0       12  110000
+1       13  220000
+2       17  303030
+3       18  404040
+Case8: Concatenate using polars
+shape: (8, 2)
+┌─────────┬────────┐
+│ staffno ┆ salary │
+│ ---     ┆ ---    │
+│ i64     ┆ i64    │
+╞═════════╪════════╡
+│ 12      ┆ 100000 │
+│ 13      ┆ 200000 │
+│ 14      ┆ 300000 │
+│ 15      ┆ 400000 │
+│ 12      ┆ 110000 │
+│ 13      ┆ 220000 │
+│ 17      ┆ 303030 │
+│ 18      ┆ 404040 │
+└─────────┴────────┘
+--------------------------------------------------
+Case9: Group using pandas
+variety
+Setosa        5.006
+Versicolor    5.936
+Virginica     6.588
+Name: sepal.length, dtype: float64
+Case9: Group using polars
+shape: (3, 2)
+┌────────────┬──────────────┐
+│ variety    ┆ sepal.length │
+│ ---        ┆ ---          │
+│ str        ┆ f64          │
+╞════════════╪══════════════╡
+│ Virginica  ┆ 6.588        │
+│ Setosa     ┆ 5.006        │
+│ Versicolor ┆ 5.936        │
+└────────────┴──────────────┘
+--------------------------------------------------
+Case10: Rename column using pandas
+   Mysepal.length  sepal.width  petal.length  petal.width variety
+0             5.1          3.5           1.4          0.2  Setosa
+1             4.9          3.0           1.4          0.2  Setosa
+2             4.7          3.2           1.3          0.2  Setosa
+3             4.6          3.1           1.5          0.2  Setosa
+4             5.0          3.6           1.4          0.2  Setosa
+Case10: Rename column using polars
+shape: (5, 5)
+┌────────────────┬─────────────┬──────────────┬─────────────┬─────────┐
+│ Mysepal.length ┆ sepal.width ┆ petal.length ┆ petal.width ┆ variety │
+│ ---            ┆ ---         ┆ ---          ┆ ---         ┆ ---     │
+│ f64            ┆ f64         ┆ f64          ┆ f64         ┆ str     │
+╞════════════════╪═════════════╪══════════════╪═════════════╪═════════╡
+│ 5.1            ┆ 3.5         ┆ 1.4          ┆ 0.2         ┆ Setosa  │
+│ 4.9            ┆ 3.0         ┆ 1.4          ┆ 0.2         ┆ Setosa  │
+│ 4.7            ┆ 3.2         ┆ 1.3          ┆ 0.2         ┆ Setosa  │
+│ 4.6            ┆ 3.1         ┆ 1.5          ┆ 0.2         ┆ Setosa  │
+│ 5.0            ┆ 3.6         ┆ 1.4          ┆ 0.2         ┆ Setosa  │
+└────────────────┴─────────────┴──────────────┴─────────────┴─────────┘
+--------------------------------------------------
+Case11: Delete column using pandas
+   sepal.length  sepal.width  petal.width variety
+0           5.1          3.5          0.2  Setosa
+1           4.9          3.0          0.2  Setosa
+2           4.7          3.2          0.2  Setosa
+3           4.6          3.1          0.2  Setosa
+4           5.0          3.6          0.2  Setosa
+Case11: Delete column using polars
+shape: (5, 4)
+┌──────────────┬─────────────┬─────────────┬─────────┐
+│ sepal.length ┆ sepal.width ┆ petal.width ┆ variety │
+│ ---          ┆ ---         ┆ ---         ┆ ---     │
+│ f64          ┆ f64         ┆ f64         ┆ str     │
+╞══════════════╪═════════════╪═════════════╪═════════╡
+│ 5.1          ┆ 3.5         ┆ 0.2         ┆ Setosa  │
+│ 4.9          ┆ 3.0         ┆ 0.2         ┆ Setosa  │
+│ 4.7          ┆ 3.2         ┆ 0.2         ┆ Setosa  │
+│ 4.6          ┆ 3.1         ┆ 0.2         ┆ Setosa  │
+│ 5.0          ┆ 3.6         ┆ 0.2         ┆ Setosa  │
+└──────────────┴─────────────┴─────────────┴─────────┘
+--------------------------------------------------
+Pandas took 0.0099940 seconds to read the file
+Polars took 0.0013485 seconds to read the file
